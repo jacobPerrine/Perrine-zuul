@@ -15,9 +15,13 @@ public class Week4Test
 {
 
     public static void display() {
-        System.out.println("I hope my project files are organized properly." +
-                            " I tried to do so in the same way that the setup" +
-                            " video files were organized. Let me know if something" +
-                            " is off about it.");
+        System.out.println("I hope my project files are organized properly. \n" +
+                            "I tried to do so in the same way that the setup \n" +
+                            "video files were organized. Let me know if something \n" +
+                            "is off about it.");
+    }
+
+    public static void anotherDisplay() {
+        System.out.println("Just another test string. Week4Test is working.");
     }
 }
