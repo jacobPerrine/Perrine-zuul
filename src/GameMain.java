@@ -4,7 +4,11 @@ package src;
  * Main launching point for the Summer Swing application.
  *
  * @author Jacob Perrine
- * @version 2017.07.17
+ * @version 2017.07.24
+ *
+ * @modifications
+ * -added the Week4Test.display() call in main() in order to test
+ *  whether Git and GitHub were configured correctly
  */
 public class GameMain
 {
@@ -16,6 +20,7 @@ public class GameMain
     public static void main(String[] args)
     {
         Game game = new Game();
+        Week4Test.display();
         game.play();
     }
 }
