@@ -1,0 +1,42 @@
+--------------------------------------------------------------------------
+--------------------------Summer Swing changelog--------------------------
+--------------------------------------------------------------------------
+
+v2017.07.03 (initial release)
+
+Game class
+ - updated class comment block to reflect the new game scenario
+ - altered createRooms() to use scenario-relevant Room objects
+ - changed display text in printWelcome() to refer to the new scenario
+ - changed display text in printHelp() to refer to the new scenario
+
+__________________________________________________________________________
+v2017.07.10
+
+Game class
+ - Added new method printLocationInfo() to display current room description
+   and exits from the room
+ - Replaced duplicate code in printWelcomeMessage() and goRoom() with a
+   call to printLocationInfo()
+ - Moved older version modification notes to a dedicated project changelog
+ - Replaced the if-logic construct in goRoom() that checked for valid exit
+   directions with a call to Room object.getExit()
+ - Changed printLocationInfo to use the getExit() method of Room objects
+ - Altered printLocationInfo to call the Room objects getExitString() method
+ - Altered createRooms() to use revised setExit() method
+ - Added a new game location, stageCatwalk
+ - Changed printLocationInfo to call currentRoom.getLongDescription()
+
+Room class
+ - Changed all fields from public to private
+ - Added the getExit() method to access the exit Rooms
+ - Added new method getExitString() to return a String describing available
+   exits in a Room
+ - Changed exit fields to use a HashMap instead of four variables
+ - Changed getExitString() to use a Set
+ - Added getLongDescription() method
+
+* GameMain class is introduced to call the java main() method
+
+__________________________________________________________________________
+future update space
