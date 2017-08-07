@@ -12,11 +12,7 @@ package src;
  * @version 2017.07.17
  * 
  * @modifications
- * - Added "look" to the String array holding valid user commands
- * - Added "time" to the String array holding valid user commands
- * - Added the showAll() method to display all valid commands to the user
- * - Renamed the showAll() method to getCommandList(), changed it's behavior
- *   to return a String containing all valid commands
+ * - last updated v2017.07.17; see changelog
  */
 
 public class CommandWords

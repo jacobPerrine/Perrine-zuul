@@ -20,9 +20,7 @@ import java.util.Scanner;
  * @version 2017.07.17
  * 
  * @modifications
- * - Added the showCommands() method to print the valid command words
- * - Renamed the showCommands() method to getCommands(), changed it's
- *   behavior to return a string containing the valid command words
+ * - last updated v2017.07.17; see changelog
  */
 
 public class Parser 

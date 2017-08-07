@@ -18,29 +18,7 @@ package src;
  * @version 2017.07.17
  * 
  * @modifications
- * - Added the user command look(), to view the description of the
- *   current room
- * - Added a case statement to processCommand() that recognizes the new look()
- *   user command
- * - Deleted the now-redundant printLocationInfo() method and replaced any
- *   calls to it with calls to look()
- * - Initialized a TimeClock object field in the class constuctor named timer,
- *   to keep track of the in-game time
- * - Added time() method to give the player a command to check the
- *   in-game time
- * - Added a case statement to processCommand() that recognizes the new time()
- *   user command
- * - Added a statement to the "go" case under processCommand() that advances
- *   the in-game clock by ten minutes
- * - Altered the printHelp() method to dynamically retrieve the valid commands
- *   from the parser using it's showCommands() method
- * - Changed printHelp() to display the String returned by a call to the parser
- *   object's getCommands() method
- * - Altered createRooms() to also add items to some rooms
- * - Moved previous version changes to changelog
- * 
- * @modifications (wip)
- * - Changed createRooms() to first initialize an Item, then set it to a room
+ * - last updated v2017.07.17; see changelog
  */
 
 public class Game 

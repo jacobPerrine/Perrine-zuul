@@ -19,15 +19,7 @@ import java.util.Set;
  * @version 2017.07.17
  * 
  * @modifications
- * - Added new object field, item, to potentially hold Item object references
- * - Altered constructor to initialize item as null
- * - Added setItem() method to define an item for a room on the fly
- * - Changed getLongDescription() to also include info about an item in the
- *   room, if one exists
- * - Moved previous version changes to changelog
- * 
- * @modifications (wip)
- * - Changed setItem to use an Item as a parameter to set the room item.
+ * - last updated v2017.07.17; see changelog
  */
 
 public class Room 
