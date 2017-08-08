@@ -1,5 +1,7 @@
 package src;
 
+import java.util.HashMap;
+
 /**
  * This class inherits from and extends the Room class. The Transporter
  * Room sends the player to a random Room upon exit.
@@ -9,6 +11,10 @@ package src;
  */
 public class TransporterRoom extends Room
 {
+    public TransporterRoom(String description)
+    {
+        super(description);
+    }
     /**
      * Return a random room, independent of the direction parameter
      *
