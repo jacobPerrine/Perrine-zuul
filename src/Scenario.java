@@ -11,7 +11,6 @@ import java.util.Random;
  *
  * @modifications
  * - Moved game scenario configuration from Game class to this class' constructor
- * - Populated the rooms ArrayList with the rooms from the game scenario
  */
 public class Scenario
 {
@@ -85,7 +84,7 @@ public class Scenario
         startRoom = centerStage;
 
         // Add all the rooms to the rooms ArrayList
-        rooms.add(centerStage);
+/*        rooms.add(centerStage);
         rooms.add(backStage);
         rooms.add(westLawn);
         rooms.add(eastLawn);
@@ -93,7 +92,7 @@ public class Scenario
         rooms.add(merchCounter);
         rooms.add(foodCourt);
         rooms.add(parkingLot);
-        rooms.add(stageCatwalks);
+        rooms.add(stageCatwalks);*/
     }
 
     /**
