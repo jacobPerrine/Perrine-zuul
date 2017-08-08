@@ -18,7 +18,8 @@ package src;
  * @version 2017.07.17
  * 
  * @modifications
- * - last updated v2017.07.17; see changelog
+ * - Moved the contents of createRooms() to the Scenario class; deleted createRooms()
+ * - Set currentRoom in Game() to use the start room value of the Scenario class
  */
 
 public class Game 
@@ -32,71 +33,10 @@ public class Game
      */
     public Game() 
     {
-        createRooms();
         parser = new Parser();
         timer = new TimeClock();
-    }
-
-    /**
-     * Create all the rooms, link their exits together, and add items.
-     */
-    private void createRooms()
-    {
-        Room centerStage, backStage, westLawn, eastLawn, frontLawn,
-             merchCounter, foodCourt, parkingLot, stageCatwalks;
-      
-        // create the rooms
-        centerStage = new Room("by the stairs leading onto center stage");
-        backStage = new Room("in the back stage area");
-        westLawn = new Room("trudging through the west lawn");
-        eastLawn = new Room("walking along the east lawn");
-        frontLawn = new Room("on the front lawn");
-        merchCounter = new Room("standing near the merchandise counter");
-        foodCourt = new Room("milling around the food court");
-        parkingLot = new Room("in the parking lot");
-        stageCatwalks = new Room("up in the catwalks above the stage");
-        
-        // initialize items and add them to rooms
-        Item unknownGuitar = new Item("someone's guitar", 5);
-        Item leftBoot = new Item("a single black boot. The left one", 2);
-        Item rightBoot = new Item("a single black boot. The right one", 2);
-        Item lightsRemote = new Item("the lights panel remote control", 1);
-        centerStage.setItem(unknownGuitar);
-        merchCounter.setItem(leftBoot);
-        parkingLot.setItem(rightBoot);
-        stageCatwalks.setItem(lightsRemote);
-        
-        // initialise room exits
-        centerStage.setExit("north", backStage);
-        centerStage.setExit("east", eastLawn);
-        centerStage.setExit("south", frontLawn);
-        centerStage.setExit("west", westLawn);
-        
-        backStage.setExit("south", centerStage);
-        backStage.setExit("up", stageCatwalks);
-        
-        westLawn.setExit("east", centerStage);
-        westLawn.setExit("south", merchCounter);
-        
-        eastLawn.setExit("south", foodCourt);
-        eastLawn.setExit("west", centerStage);
-        
-        frontLawn.setExit("north", centerStage);
-        frontLawn.setExit("east", foodCourt);
-        frontLawn.setExit("south", parkingLot);
-        frontLawn.setExit("west", merchCounter);
-        
-        merchCounter.setExit("north", westLawn);
-        merchCounter.setExit("east", frontLawn);
-        
-        foodCourt.setExit("north", eastLawn);
-        foodCourt.setExit("west", frontLawn);
-        
-        parkingLot.setExit("north", frontLawn);
-        
-        stageCatwalks.setExit("down", backStage); 
-
-        currentRoom = centerStage;  // start game outside
+        Scenario game = new Scenario();
+        currentRoom = game.getStartRoom();
     }
 
     /**
