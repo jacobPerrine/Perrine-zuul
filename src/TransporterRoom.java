@@ -29,6 +29,7 @@ public class TransporterRoom extends Room
      * @param direction Ignored
      * @return A random room
      */
+    @Override
     public Room getExit(String direction)
     {
         return findRandomRoom();
@@ -40,5 +41,14 @@ public class TransporterRoom extends Room
     private Room findRandomRoom()
     {
         return game.getRandomRoom();
+    }
+
+    /**
+     * @return A description of how to exit the transporter
+     */
+    @Override
+    public String getExitString()
+    {
+        return "Exits:  ????  There's gotta be a way out. Try a direction!";
     }
 }
