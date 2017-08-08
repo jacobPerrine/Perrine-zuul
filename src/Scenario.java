@@ -11,6 +11,10 @@ import java.util.Random;
  *
  * @modifications
  * - Moved game scenario configuration from Game class to this class' constructor
+ * - Initialized the rooms ArrayList and added the game rooms to it in constructor
+ * - Changed getStartRoom() to return the starting room
+ * - Changed getRandomRoom() to return a random room from the scenario
+ * - Added the transporter room to the scenario, entered from the back stage
  */
 public class Scenario
 {
@@ -19,7 +23,7 @@ public class Scenario
     private Random random;
 
     /**
-     * Constructor for objects of class Scenario
+     * Initialize and configure the game scenario
      */
     public Scenario()
     {
@@ -27,7 +31,8 @@ public class Scenario
 
         // declare the rooms
         Room centerStage, backStage, westLawn, eastLawn, frontLawn,
-                merchCounter, foodCourt, parkingLot, stageCatwalks;
+                merchCounter, foodCourt, parkingLot, stageCatwalks,
+                transporter;
 
         // configure the room descriptions
         centerStage = new Room("by the stairs leading onto center stage");
@@ -39,6 +44,8 @@ public class Scenario
         foodCourt = new Room("milling around the food court");
         parkingLot = new Room("in the parking lot");
         stageCatwalks = new Room("up in the catwalks above the stage");
+        transporter = new TransporterRoom("in a weirdly enclosed metal shack",
+                                            this);
 
         // configure room exits
         centerStage.setExit("north", backStage);
@@ -46,6 +53,7 @@ public class Scenario
         centerStage.setExit("south", frontLawn);
         centerStage.setExit("west", westLawn);
 
+        backStage.setExit("north", transporter);
         backStage.setExit("south", centerStage);
         backStage.setExit("up", stageCatwalks);
 
@@ -80,11 +88,9 @@ public class Scenario
         parkingLot.setItem(rightBoot);
         stageCatwalks.setItem(lightsRemote);
 
-        // Set the start room
-        startRoom = centerStage;
-
-        // Add all the rooms to the rooms ArrayList
-/*        rooms.add(centerStage);
+        // Initialize the rooms ArrayList, add all the rooms to it
+        rooms = new ArrayList<>();
+        rooms.add(centerStage);
         rooms.add(backStage);
         rooms.add(westLawn);
         rooms.add(eastLawn);
@@ -92,7 +98,10 @@ public class Scenario
         rooms.add(merchCounter);
         rooms.add(foodCourt);
         rooms.add(parkingLot);
-        rooms.add(stageCatwalks);*/
+        rooms.add(stageCatwalks);
+
+        // Set the start room
+        startRoom = centerStage;
     }
 
     /**
@@ -106,8 +115,9 @@ public class Scenario
     /**
      * @return  a random room from this scenario
      */
-/*    public Room getRandomRoom()
+    public Room getRandomRoom()
     {
-        // complete this method
-    }*/
+        int randInt = random.nextInt(9);
+        return rooms.get(randInt);
+    }
 }

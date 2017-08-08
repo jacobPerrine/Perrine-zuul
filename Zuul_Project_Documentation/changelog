@@ -90,3 +90,10 @@ Game class
 
 Room class
  - Changed setItem to use an Item as a parameter to set the room item.
+__________________________________________________________________________
+v2017.08.07
+
+General
+ - Imported and edited the Scenario class to hold gameworld settings
+ - Created TransporterRoom as a subclass of Room, a special room to send
+   players to a random room upon exit
